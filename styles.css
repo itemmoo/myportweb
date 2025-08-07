@@ -1,0 +1,112 @@
+/* Define CSS variables for light theme */
+:root {
+    --bg-gradient-start: #e0f2fe; /* Light blue */
+    --bg-gradient-end: #bbdefb;   /* Slightly darker light blue */
+    --main-bg-color: #ffffff;
+    --text-color-dark: #1f2937; /* gray-800 */
+    --text-color-medium: #4b5563; /* gray-700 */
+    --text-color-light: #6b7280; /* gray-600 */
+    --primary-color: #9333ea; /* purple-600 */
+    --secondary-color: #db2777; /* pink-600 */
+    --accent-purple-50: #f5f3ff;
+    --accent-purple-200: #ddd6fe;
+    --accent-purple-700: #6d28d9;
+    --accent-blue-50: #eff6ff;
+    --accent-blue-200: #bfdbfe;
+    --accent-blue-700: #1d4ed8;
+    --accent-green-50: #ecfdf5;
+    --accent-green-200: #a7f3d0;
+    --accent-green-700: #047857;
+    --accent-yellow-50: #fffbeb;
+    --accent-yellow-200: #fde68a;
+    --accent-yellow-700: #b45309;
+    --sidebar-bg-color: #f9fafb; /* gray-50 */
+    --border-color: #f3f4f6; /* gray-100 */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme styles */
+html[data-theme="dark"] {
+    --bg-gradient-start: #1a202c; /* Dark blue-gray */
+    --bg-gradient-end: #2d3748;   /* Even darker blue-gray */
+    --main-bg-color: #2d3748; /* Darker background for content areas */
+    --text-color-dark: #e2e8f0; /* Light gray */
+    --text-color-medium: #cbd5e0; /* Slightly darker light gray */
+    --text-color-light: #a0aec0; /* Gray */
+    --primary-color: #a78bfa; /* Light purple */
+    --secondary-color: #f472b6; /* Light pink */
+    --accent-purple-50: #4a5568;
+    --accent-purple-200: #667eea;
+    --accent-purple-700: #8b5cf6;
+    --accent-blue-50: #2c5282;
+    --accent-blue-200: #4299e1;
+    --accent-blue-700: #63b3ed;
+    --accent-green-50: #2f855a;
+    --accent-green-200: #48bb78;
+    --accent-green-700: #38a169;
+    --accent-yellow-50: #b7791f;
+    --accent-yellow-200: #ecc94b;
+    --accent-yellow-700: #d69e2e;
+    --sidebar-bg-color: #1a202c; /* Darker sidebar */
+    --border-color: #4a5568;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-end));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background 0.3s ease-in-out; /* Smooth transition for background */
+}
+
+/* Apply theme variables to elements */
+.bg-white { background-color: var(--main-bg-color); transition: background-color 0.3s ease-in-out; }
+.text-gray-800 { color: var(--text-color-dark); transition: color 0.3s ease-in-out; }
+.text-gray-700 { color: var(--text-color-medium); transition: color 0.3s ease-in-out; }
+.text-gray-600 { color: var(--text-color-light); transition: color 0.3s ease-in-out; }
+.text-purple-600 { color: var(--primary-color); transition: color 0.3s ease-in-out; }
+.bg-pink-600 { background-color: var(--secondary-color); transition: background-color 0.3s ease-in-out; }
+.hover\:bg-pink-700:hover { background-color: var(--secondary-color); } /* Tailwind handles hover, but ensure variable is used */
+.border-pink-500 { border-color: var(--secondary-color); transition: border-color 0.3s ease-in-out; }
+.bg-gray-50 { background-color: var(--sidebar-bg-color); transition: background-color 0.3s ease-in-out; }
+.bg-gray-100 { background-color: var(--border-color); transition: background-color 0.3s ease-in-out; }
+.hover\:bg-purple-100:hover { background-color: var(--accent-purple-50); } /* Tailwind handles hover */
+.hover\:text-purple-600:hover { color: var(--primary-color); } /* Tailwind handles hover */
+
+/* Service Card colors */
+.bg-purple-50 { background-color: var(--accent-purple-50); transition: background-color 0.3s ease-in-out; }
+.bg-purple-200 { background-color: var(--accent-purple-200); transition: background-color 0.3s ease-in-out; }
+.text-purple-700 { color: var(--accent-purple-700); transition: color 0.3s ease-in-out; }
+
+.bg-blue-50 { background-color: var(--accent-blue-50); transition: background-color 0.3s ease-in-out; }
+.bg-blue-200 { background-color: var(--accent-blue-200); transition: background-color 0.3s ease-in-out; }
+.text-blue-700 { color: var(--accent-blue-700); transition: color 0.3s ease-in-out; }
+
+.bg-green-50 { background-color: var(--accent-green-50); transition: background-color 0.3s ease-in-out; }
+.bg-green-200 { background-color: var(--accent-green-200); transition: background-color 0.3s ease-in-out; }
+.text-green-700 { color: var(--accent-green-700); transition: color 0.3s ease-in-out; }
+
+.bg-yellow-50 { background-color: var(--accent-yellow-50); transition: background-color 0.3s ease-in-out; }
+.bg-yellow-200 { background-color: var(--accent-yellow-200); transition: background-color 0.3s ease-in-out; }
+.text-yellow-700 { color: var(--accent-yellow-700); transition: color 0.3s ease-in-out; }
+
+/* Custom scrollbar for the main content area */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--text-color-light);
+    border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color-medium);
+}
+

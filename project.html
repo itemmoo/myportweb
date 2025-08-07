@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nattakit - Projects</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to external CSS file (assuming it exists) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 lg:p-10 font-sans">
+
+    <!-- Mobile Navigation (top bar) -->
+    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-30 lg:hidden">
+        <div class="flex justify-between items-center px-4 py-2">
+            <span class="font-bold text-xl text-purple-600">Nattakit</span>
+            <button id="menu-btn" class="text-2xl text-purple-600 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden flex flex-col space-y-2 px-6 pb-4">
+            <a href="index.html" class="py-2 text-gray-700 hover:text-purple-600 font-semibold">Home</a>
+            <a href="statement.html" class="py-2 text-gray-700 hover:text-purple-600 font-semibold">Statement</a>
+            <a href="project.html" class="py-2 text-gray-700 hover:text-purple-600 font-semibold">Project</a>
+            <a href="contact.html" class="py-2 text-gray-700 hover:text-purple-600 font-semibold">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Container (push down for mobile nav) -->
+    <div class="flex flex-col lg:flex-row w-full max-w-7xl bg-white rounded-2xl shadow-xl overflow-hidden mt-16 lg:mt-0">
+
+        <!-- Sidebar (Profile and Contact Info) -->
+        <aside class="w-full lg:w-1/4 bg-white p-4 sm:p-8 flex flex-col items-center text-center lg:items-start lg:text-left rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none shadow-lg lg:shadow-none z-10 lg:h-auto">
+            <!-- Profile Image -->
+            <div class="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
+                <img src="img/mypic.JPG" alt="Profile Picture" class="w-full h-full object-cover">
+            </div>
+            <!-- Name -->
+            <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-1">Nattakit Upasontanon</h1>
+            <p class="text-sm sm:text-base text-purple-600 font-medium mb-4">Student</p>
+            <!-- Social Media -->
+            <div class="flex space-x-4 mb-6">
+                <a href="https://www.facebook.com/mccula.redmonkey/" class="text-gray-600 hover:text-blue-500 transition-colors duration-200">
+                    <i class="fab fa-facebook-f text-lg"></i>
+                </a>
+                <a href="https://www.instagram.com/redmonkey4826/" class="text-pink-600 hover:text-pink-500 transition-colors duration-200">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+                <a href="https://github.com/itemmoo" class="text-gray-600 hover:text-blue-500 transition-colors duration-200">
+                    <i class="fab fa-github text-lg"></i>
+                </a>
+            </div>
+            <!-- Contact Info -->
+            <div class="w-full bg-gray-50 p-4 rounded-xl shadow-inner text-gray-700 text-xs sm:text-sm">
+                <div class="flex items-center mb-3">
+                    <i class="fas fa-phone-alt text-purple-500 mr-2"></i>
+                    <span>+66 91 871 6392</span>
+                </div>
+                <div class="flex items-center mb-3">
+                    <i class="fas fa-envelope text-purple-500 mr-2"></i>
+                    <span>redmonkey4826@gmail.com</span>
+                </div>
+                <div class="flex items-center mb-3">
+                    <i class="fas fa-map-marker-alt text-purple-500 mr-2"></i>
+                    <span>Thailand Chonburi Sattahip</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-calendar-alt text-purple-500 mr-2"></i>
+                    <span>February 15, 2008</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area - Responsive Grid -->
+        <main class="flex-1 p-6 sm:p-8 md:p-10 bg-white rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none overflow-y-auto custom-scrollbar max-h-[calc(100vh-40px)] lg:max-h-full">
+            <section>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-pink-500 pb-2 inline-block">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Bond Up App -->
+                    <div class="bg-purple-50 p-6 rounded-xl shadow-md flex flex-col hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            <a href="https://www.facebook.com/story.php?story_fbid=1313276457176805&id=100054833902173&rdid=I4V2nuyxqjl3aSLS#" target="_blank">Bond Up</a>
+                        </h3>
+                        <img src="https://placehold.co/400x200/8b5cf6/ffffff?text=Bond+Up" alt="Bond Up App" class="w-full rounded-md mb-4 shadow-sm">
+                        <p class="text-gray-600 mb-4">
+                            I am Natthakit Upassantanon, part of the development team behind the Bond Up application, responsible for coding. I'm proud to contribute to a project that aims to strengthen family bonds and encourage better understanding through technology. I hope Bond Up can be a meaningful tool that brings families closer together.
+                        </p>
+                        <div class="flex flex-col space-y-2 mb-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.bondupmvs.com&hl=th&fbclid=IwY2xjawKJJ8tleHRuA2FlbQIxMABicmlkETFtaFdvUWZVbm5QeEpRRmk3AR71yMM6qaKo0t50WwIAx0HkYsFa29FsSsqnD2IL99rRPVWv8N8FGeu5XZkgIA_aem_cawLdekdPymWlojBgXCYTA&pli=1" target="_blank" class="inline-flex items-center px-4 py-2 bg-purple-200 text-purple-700 rounded-full font-semibold hover:bg-purple-300 transition-colors duration-200">
+                                <i class="fas fa-download mr-2"></i> Click To Download
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Project -->
+                    <div class="bg-pink-50 p-6 rounded-xl shadow-md flex flex-col hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            <a href="https://accurate-trigonometry.web.app/" target="_blank">Calculator Project</a>
+                        </h3>
+                        <img src="img/accurate-trigonometry qrcode.png" alt="Calculator QR code" class="w-32 mx-auto mb-4 rounded shadow">
+                        <p class="text-gray-600 mb-4">
+                            A scientific calculator web app for accurate trigonometry. Try it out and see the source code!
+                        </p>
+                        <div class="flex flex-col space-y-2 mb-4">
+                            <a href="https://github.com/itemmoo/scientific-calculator" target="_blank" class="inline-flex items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold hover:bg-gray-300 transition-colors duration-200">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                            <a href="https://accurate-trigonometry.web.app/" target="_blank" class="inline-flex items-center px-4 py-2 bg-pink-200 text-pink-700 rounded-full font-semibold hover:bg-pink-300 transition-colors duration-200">
+                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Web App with Database -->
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-md flex flex-col hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            <a href="https://calendar-35c39.web.app/" target="_blank">Calendar Web App with Database</a>
+                        </h3>
+                        <img src="img/calendar qrcode.png" alt="Calendar QR code" class="w-32 mx-auto mb-4 rounded shadow">
+                        <p class="text-gray-600 mb-4">
+                            A calendar web application using a database for storing events. Mobile-friendly and easy to use!
+                        </p>
+                        <div class="flex flex-col space-y-2 mb-4">
+                            <a href="https://github.com/itemmoo/calendar" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-200 text-blue-700 rounded-full font-semibold hover:bg-blue-300 transition-colors duration-200">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                            <a href="https://calendar-35c39.web.app/" target="_blank" class="inline-flex items-center px-4 py-2 bg-pink-200 text-pink-700 rounded-full font-semibold hover:bg-pink-300 transition-colors duration-200">
+                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Link to QR Code -->
+                    <div class="bg-green-50 p-6 rounded-xl shadow-md flex flex-col hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            <a href="https://link-to-qr-code.web.app/" target="_blank">Link to QR Code</a>
+                        </h3>
+                        <img src="img/Link to QR Code qrcode.png" alt="Link to QR Code QR code" class="w-32 mx-auto mb-4 rounded shadow">
+                        <p class="text-gray-600 mb-4">
+                            Generate QR codes for your links! Visit and see the source code.
+                        </p>
+                        <div class="flex flex-col space-y-2 mb-4">
+                            <a href="https://github.com/itemmoo/Link-to-QR-Code" target="_blank" class="inline-flex items-center px-4 py-2 bg-green-200 text-green-700 rounded-full font-semibold hover:bg-green-300 transition-colors duration-200">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                            <a href="https://link-to-qr-code.web.app/" target="_blank" class="inline-flex items-center px-4 py-2 bg-pink-200 text-pink-700 rounded-full font-semibold hover:bg-pink-300 transition-colors duration-200">
+                                <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tic Tac Toe - Python -->
+                    <div class="bg-yellow-50 p-6 rounded-xl shadow-md flex flex-col hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            <a href="https://github.com/itemmoo/tic-tac-toe" target="_blank">Tic Tac Toe - Python</a>
+                        </h3>
+                        <img src="img/tic tac toe.png" alt="Tic Tac Toe Python" class="w-32 mx-auto mb-4 rounded shadow cursor-pointer" onclick="expandTicTacToe()">
+                        <p class="text-gray-600 mb-4">
+                            A simple Tic Tac Toe game written in Python. Click the picture to expand!
+                        </p>
+                        <div class="flex flex-col space-y-2 mb-4">
+                            <a href="https://github.com/itemmoo/tic-tac-toe" target="_blank" class="inline-flex items-center px-4 py-2 bg-yellow-200 text-yellow-700 rounded-full font-semibold hover:bg-yellow-300 transition-colors duration-200">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Solve Quadratic -->
+                    <div class="bg-red-50 p-6 rounded-xl shadow-md flex flex-col hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            <a href="https://github.com/itemmoo/solve-quadratic" target="_blank">Solve Quadratic</a>
+                        </h3>
+                        <img src="img/sovler.png" alt="Quadratic Solver" class="w-32 mx-auto mb-4 rounded shadow cursor-pointer" onclick="expandsovler()">
+                        <p class="text-gray-600 mb-4">
+                            A Python script to solve quadratic equations quickly.
+                        </p>
+                        <div class="flex flex-col space-y-2 mb-4">
+                            <a href="https://github.com/itemmoo/solve-quadratic" target="_blank" class="inline-flex items-center px-4 py-2 bg-red-200 text-red-700 rounded-full font-semibold hover:bg-red-300 transition-colors duration-200">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Random Password Generator -->
+                    <div class="bg-teal-50 p-6 rounded-xl shadow-md flex flex-col hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                            <a href="https://github.com/itemmoo/random_password_gen" target="_blank">Random Password Generator</a>
+                        </h3>
+                        <img src="img/password.png" alt="Password Generator" class="w-32 mx-auto mb-4 rounded shadow cursor-pointer" onclick="expandpass()">
+                        <p class="text-gray-600 mb-4">
+                            A script for generating random secure passwords. Click the image to expand!
+                        </p>
+                        <div class="flex flex-col space-y-2 mb-4">
+                            <a href="https://github.com/itemmoo/random_password_gen" target="_blank" class="inline-flex items-center px-4 py-2 bg-teal-200 text-teal-700 rounded-full font-semibold hover:bg-teal-300 transition-colors duration-200">
+                                <i class="fab fa-github mr-2"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Desktop Navigation Sidebar (visible only on large screens) -->
+        <nav class="hidden lg:flex flex-col items-center justify-center p-4 bg-white rounded-r-2xl shadow-lg z-20">
+            <div class="flex flex-col space-y-6">
+                <a href="index.html" class="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-200 shadow-md" title="Home">
+                    <i class="fas fa-user text-xl"></i>
+                </a>
+                <a href="statement.html" class="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-200 shadow-md" title="Statement">
+                    <i class="fas fa-file-alt text-xl"></i>
+                </a>
+                <a href="project.html" class="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-200 shadow-md" title="Project">
+                    <i class="fas fa-briefcase text-xl"></i>
+                </a>
+                <a href="contact.html" class="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-200 shadow-md" title="Contact">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hamburger menu script -->
+    <script>
+        // Hamburger menu script
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
