@@ -3,81 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nattakit - Projects</title>
+    <title>Nattakit</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind Dark Mode Configuration
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Link to external CSS file (assuming it exists) -->
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="flex items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 lg:p-10 font-sans">
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 lg:p-10 transition-colors duration-200 dark:bg-gray-900">
 
     <!-- Mobile Navigation (top bar) -->
-    <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-30 lg:hidden">
+    <nav class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-md z-30 lg:hidden">
         <div class="flex justify-between items-center px-4 py-2">
-            <span class="font-bold text-xl text-purple-600">Nattakit</span>
-            <button id="menu-btn" class="text-2xl text-purple-600 focus:outline-none">
+            <span class="font-bold text-xl text-purple-600 dark:text-purple-400">Nattakit</span>
+            <button id="menu-btn" class="text-2xl text-purple-600 dark:text-purple-400 focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+        
         <div id="mobile-menu" class="hidden flex flex-col space-y-2 px-6 pb-4">
-            <a href="index.html" class="py-2 text-gray-700 hover:text-purple-600 font-semibold">Home</a>
-            <a href="statement.html" class="py-2 text-gray-700 hover:text-purple-600 font-semibold">Statement</a>
-            <a href="project.html" class="py-2 text-gray-700 hover:text-purple-600 font-semibold">Project</a>
-            <a href="contact.html" class="py-2 text-gray-700 hover:text-purple-600 font-semibold">Contact</a>
+            <a href="index.html" class="py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-semibold">Home</a>
+            <a href="statement.html" class="py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-semibold">Statement</a>
+            <a href="project.html" class="py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-semibold">Project</a>
+            <a href="contact.html" class="py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-semibold">Contact</a>
+        
         </div>
     </nav>
 
     <!-- Main Container (push down for mobile nav) -->
-    <div class="flex flex-col lg:flex-row w-full max-w-7xl bg-white rounded-2xl shadow-xl overflow-hidden mt-16 lg:mt-0">
+    <div class="flex flex-col lg:flex-row w-full max-w-7xl bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mt-16 lg:mt-0">
+    <!-- Theme Toggle Button (Fixed Position) -->
+    <button id="theme-toggle" class="z-5 p-2 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200 w-10">
+        <!-- Sun icon for dark mode -->
+        <svg id="sun-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+        </svg>
+        <!-- Moon icon for light mode -->
+        <svg id="moon-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+        </svg>
+    </button>
 
-        <!-- Sidebar (Profile and Contact Info) -->
-        <aside class="w-full lg:w-1/4 bg-white p-4 sm:p-8 flex flex-col items-center text-center lg:items-start lg:text-left rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none shadow-lg lg:shadow-none z-10 lg:h-auto">
+       <!-- Left Sidebar (Profile and Contact Info) -->
+        <div class="w-full lg:w-1/4 bg-white dark:bg-gray-800 p-6 sm:p-8 flex flex-col items-center text-center lg:items-start lg:text-left rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none shadow-lg lg:shadow-none z-10">
             <!-- Profile Image -->
-            <div class="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
+            <div class="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden mb-6 border-4 border-white dark:border-gray-700 shadow-md">
                 <img src="img/mypic.JPG" alt="Profile Picture" class="w-full h-full object-cover">
             </div>
+
             <!-- Name -->
-            <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-1">Nattakit Upasontanon</h1>
-            <p class="text-sm sm:text-base text-purple-600 font-medium mb-4">Student</p>
-            <!-- Social Media -->
-            <div class="flex space-x-4 mb-6">
-                <a href="https://www.facebook.com/mccula.redmonkey/" class="text-gray-600 hover:text-blue-500 transition-colors duration-200">
-                    <i class="fab fa-facebook-f text-lg"></i>
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-2">Nattakit Upasontanon</h1>
+            <p class="text-md sm:text-lg text-purple-600 dark:text-purple-400 font-medium mb-6">Student</p>
+
+            <!-- Social Media Icons -->
+            <div class="flex space-x-4 mb-8">
+                <a href="https://www.facebook.com/mccula.redmonkey/" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200">
+                    <i class="fab fa-facebook-f text-xl"></i>
                 </a>
-                <a href="https://www.instagram.com/redmonkey4826/" class="text-pink-600 hover:text-pink-500 transition-colors duration-200">
-                    <i class="fab fa-instagram text-lg"></i>
+                <a href="https://www.instagram.com/redmonkey4826/" class="text-pink-600 dark:text-pink-400 hover:text-pink-500 dark:hover:text-pink-300 transition-colors duration-200">
+                    <i class="fab fa-instagram text-xl"></i>
                 </a>
-                <a href="https://github.com/itemmoo" class="text-gray-600 hover:text-blue-500 transition-colors duration-200">
-                    <i class="fab fa-github text-lg"></i>
+                <a href="https://github.com/itemmoo" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200">
+                    <i class="fab fa-github text-xl"></i>
                 </a>
             </div>
-            <!-- Contact Info -->
-            <div class="w-full bg-gray-50 p-4 rounded-xl shadow-inner text-gray-700 text-xs sm:text-sm">
-                <div class="flex items-center mb-3">
-                    <i class="fas fa-phone-alt text-purple-500 mr-2"></i>
-                    <span>+66 91 871 6392</span>
+
+            <!-- Contact Information -->
+            <div class="w-full bg-gray-50 dark:bg-gray-700 p-6 rounded-xl shadow-inner text-gray-700 dark:text-gray-300">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-phone-alt text-purple-500 dark:text-purple-400 mr-3 text-lg"></i>
+                    <div>
+                        <p class="text-sm font-semibold">Phone</p>
+                        <p class="text-base">+66 91 871 6392</p>
+                    </div>
                 </div>
-                <div class="flex items-center mb-3">
-                    <i class="fas fa-envelope text-purple-500 mr-2"></i>
-                    <span>redmonkey4826@gmail.com</span>
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-envelope text-purple-500 dark:text-purple-400 mr-3 text-lg"></i>
+                    <div>
+                        <p class="text-sm font-semibold">Email</p>
+                        <p class="text-base break-all">redmonkey4826@gmail.com</p>
+                    </div>
                 </div>
-                <div class="flex items-center mb-3">
-                    <i class="fas fa-map-marker-alt text-purple-500 mr-2"></i>
-                    <span>Thailand Chonburi Sattahip</span>
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-map-marker-alt text-purple-500 dark:text-purple-400 mr-3 text-lg"></i>
+                    <div>
+                        <p class="text-sm font-semibold">Location</p>
+                        <p class="text-base">Thailand Chonburi Sattahip</p>
+                    </div>
                 </div>
                 <div class="flex items-center">
-                    <i class="fas fa-calendar-alt text-purple-500 mr-2"></i>
-                    <span>February 15, 2008</span>
+                    <i class="fas fa-calendar-alt text-purple-500 dark:text-purple-400 mr-3 text-lg"></i>
+                    <div>
+                        <p class="text-sm font-semibold">Birthday</p>
+                        <p class="text-base">February 15, 2008</p>
+                    </div>
                 </div>
             </div>
-        </aside>
+        </div>
 
         <!-- Main Content Area - Responsive Grid -->
-        <main class="flex-1 p-6 sm:p-8 md:p-10 bg-white rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none overflow-y-auto custom-scrollbar max-h-[calc(100vh-40px)] lg:max-h-full">
+        <main class="flex-1 p-6 sm:p-8 md:p-10 bg-white dark:bg-gray-800 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none overflow-y-auto custom-scrollbar max-h-[calc(100vh-40px)] lg:max-h-[75vh]">
             <section>
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-pink-500 pb-2 inline-block">My Projects</h2>
+                <h2 class="dark:text-white text-3xl font-bold text-gray-800 mb-6 border-b-4 border-pink-500 pb-2 inline-block">My Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                     <!-- Bond Up App -->
@@ -205,38 +239,26 @@
             </section>
         </main>
 
-        <!-- Desktop Navigation Sidebar (visible only on large screens) -->
-        <nav class="hidden lg:flex flex-col items-center justify-center p-4 bg-white rounded-r-2xl shadow-lg z-20">
+        <!-- Desktop Navigation Sidebar -->
+        <nav class="hidden lg:flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-r-2xl shadow-lg z-20">
             <div class="flex flex-col space-y-6">
-                <a href="index.html" class="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-200 shadow-md" title="Home">
+                <a href="index.html" class="p-3 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-600 dark:hover:text-purple-400 transition duration-200 shadow-md" title="Home">
                     <i class="fas fa-user text-xl"></i>
                 </a>
-                <a href="statement.html" class="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-200 shadow-md" title="Statement">
+                <a href="statement.html" class="p-3 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-600 dark:hover:text-purple-400 transition duration-200 shadow-md" title="Statement">
                     <i class="fas fa-file-alt text-xl"></i>
                 </a>
-                <a href="project.html" class="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-200 shadow-md" title="Project">
+                <a href="project.html" class="p-3 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-600 dark:hover:text-purple-400 transition duration-200 shadow-md" title="Project">
                     <i class="fas fa-briefcase text-xl"></i>
                 </a>
-                <a href="contact.html" class="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition duration-200 shadow-md" title="Contact">
+                <a href="contact.html" class="p-3 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-purple-600 dark:hover:text-purple-400 transition duration-200 shadow-md" title="Contact">
                     <i class="fas fa-envelope text-xl"></i>
                 </a>
             </div>
         </nav>
     </div>
 
-    <!-- Hamburger menu script -->
-    <script>
-        // Hamburger menu script
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-        });
-    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
