@@ -63,6 +63,8 @@ body {
     transition: background 0.3s ease-in-out; /* Smooth transition for background */
 }
 
+
+
 /* Apply theme variables to elements */
 .bg-white { background-color: var(--main-bg-color); transition: background-color 0.3s ease-in-out; }
 .text-gray-800 { color: var(--text-color-dark); transition: color 0.3s ease-in-out; }
@@ -109,4 +111,5 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: var(--text-color-medium);
 }
+
 
